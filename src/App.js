@@ -42,8 +42,8 @@ class App extends Component {
           >
             Learn React
           </a>
+          <ul>{files}</ul>
         </header>
-        <ul>{files}</ul>
       </div>
     );
   }
