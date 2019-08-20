@@ -11,22 +11,14 @@ class App extends Component {
 
   initElectron() {
     try {
-      console.log("one");
-      console.log(process.env);
       const chokidar = window.require("chokidar");
-
-      /* eslint-disable no-undef */
-      console.log("chokidar", chokidar);
       const watcher = chokidar.watch("build");
-      /* eslint-enable no-undef */
       watcher.on("add", path => {
-        console.log("add", path);
         this.setState({
           files: [...this.state.files, path]
         });
       });
     } catch (error) {
-      console.log(error);
       console.log(
         "This renderer does not support Nodejs. It is probably not an Electron app. Skipping trying to watch a directory on the filesystem."
       );
